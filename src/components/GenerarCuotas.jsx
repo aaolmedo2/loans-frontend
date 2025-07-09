@@ -18,7 +18,7 @@ function GenerarCuotas() {
         setMessage({ type: '', text: '' });
 
         try {
-            await axios.get(`${API_BASE_URL}/cronogramas-pagos/generar/${idCliente}`);
+            await axios.post(`${API_BASE_URL}/cronogramas-pagos/generar/${idCliente}`);
             setMessage({ type: 'success', text: 'Cuotas generadas correctamente' });
             setIdCliente('');
         } catch (err) {

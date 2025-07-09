@@ -18,7 +18,7 @@ function AprobarPrestamo() {
         setMessage({ type: '', text: '' });
 
         try {
-            await axios.put(
+            await axios.patch(
                 `${API_BASE_URL}/prestamos-clientes/${idPrestamo}/estado?estado=APROBADO`
             );
             setMessage({ type: 'success', text: 'Préstamo aprobado correctamente' });
