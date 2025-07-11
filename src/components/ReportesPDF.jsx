@@ -167,7 +167,7 @@ function ReportesPDF() {
                         <p><strong>Cuotas pagadas:</strong> ${cuotas.filter(c => c.estado === 'PAGADO').length}</p>
                         <p><strong>Cuotas pendientes:</strong> ${cuotas.filter(c => c.estado === 'PENDIENTE').length}</p>
                         <p><strong>Total a pagar:</strong> ${formatCurrency(cuotas.reduce((sum, c) => sum + (c.total || 0), 0))}</p>
-                        <p><strong>Saldo pendiente:</strong> ${formatCurrency(cuotas.reduce((sum, c) => sum + (c.saldoPendiente || 0), 0))}</p>
+                        // <p><strong>Saldo pendiente:</strong> ${formatCurrency(cuotas.reduce((sum, c) => sum + (c.saldoPendiente || 0), 0))}</p>
                     </div>
 
                     <div class="footer">
@@ -196,7 +196,7 @@ function ReportesPDF() {
             <div className="card-body">
                 {message.text && (
                     <div className={`alert ${message.type === 'success' ? 'alert-success' :
-                            message.type === 'info' ? 'alert-info' : 'alert-error'
+                        message.type === 'info' ? 'alert-info' : 'alert-error'
                         }`}>
                         {message.text}
                     </div>
