@@ -45,14 +45,14 @@ function GenerarCuotas() {
 
                 <div className="form-group">
                     <label className="form-label" htmlFor="idCliente">
-                        ID del Cliente
+                        ID del Prestamo-Cliente
                     </label>
                     <input
                         id="idCliente"
                         type="number"
                         value={idCliente}
                         onChange={(e) => setIdCliente(e.target.value)}
-                        placeholder="Ingresa el ID del cliente"
+                        placeholder="Ingresa el ID del Prestamo-Cliente"
                         className="form-input"
                         disabled={loading}
                     />

@@ -124,7 +124,7 @@ function ReportesPDF() {
                     </div>
                     
                     <div class="client-info">
-                        <h3>Información del Cliente</h3>
+                        <h3>Información del Prestamo Cliente</h3>
                         <p><strong>ID Cliente:</strong> ${idCliente}</p>
                         <p><strong>Fecha de generación:</strong> ${new Date().toLocaleDateString('es-PE')}</p>
                         <p><strong>Total de cuotas:</strong> ${cuotas.length}</p>
@@ -139,8 +139,8 @@ function ReportesPDF() {
                                 <th>Interés</th>
                                 <th>Comisiones</th>
                                 <th>Seguros</th>
-                                <th>Total</th>
-                                <th>Saldo Pendiente</th>
+                                <th>Monto Total</th>
+                                <!-- <th>Saldo Pendiente</th> -->
                                 <th>Estado</th>
                             </tr>
                         </thead>
@@ -154,7 +154,7 @@ function ReportesPDF() {
                                     <td>${formatCurrency(cuota.comisiones)}</td>
                                     <td>${formatCurrency(cuota.seguros)}</td>
                                     <td><strong>${formatCurrency(cuota.total)}</strong></td>
-                                    <td>${formatCurrency(cuota.saldoPendiente)}</td>
+                                    <!-- <td>${formatCurrency(cuota.saldoPendiente)}</td> -->
                                     <td class="status-${cuota.estado.toLowerCase()}">${cuota.estado}</td>
                                 </tr>
                             `).join('')}
@@ -167,7 +167,7 @@ function ReportesPDF() {
                         <p><strong>Cuotas pagadas:</strong> ${cuotas.filter(c => c.estado === 'PAGADO').length}</p>
                         <p><strong>Cuotas pendientes:</strong> ${cuotas.filter(c => c.estado === 'PENDIENTE').length}</p>
                         <p><strong>Total a pagar:</strong> ${formatCurrency(cuotas.reduce((sum, c) => sum + (c.total || 0), 0))}</p>
-                        // <p><strong>Saldo pendiente:</strong> ${formatCurrency(cuotas.reduce((sum, c) => sum + (c.saldoPendiente || 0), 0))}</p>
+                        <!-- <p><strong>Saldo pendiente:</strong> ${formatCurrency(cuotas.reduce((sum, c) => sum + (c.saldoPendiente || 0), 0))}</p> -->
                     </div>
 
                     <div class="footer">
@@ -204,14 +204,14 @@ function ReportesPDF() {
 
                 <div className="form-group">
                     <label className="form-label" htmlFor="idClientePDF">
-                        ID del Cliente
+                        ID del Prestamo-Cliente
                     </label>
                     <input
                         id="idClientePDF"
                         type="number"
                         value={idCliente}
                         onChange={(e) => setIdCliente(e.target.value)}
-                        placeholder="Ingresa el ID del cliente"
+                        placeholder="Ingresa el ID del Prestamo-Cliente"
                         className="form-input"
                         disabled={loading}
                     />

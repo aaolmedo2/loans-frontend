@@ -75,7 +75,7 @@ function PagosCuotas() {
             <div className="card-body">
                 {message.text && (
                     <div className={`alert ${message.type === 'success' ? 'alert-success' :
-                            message.type === 'info' ? 'alert-info' : 'alert-error'
+                        message.type === 'info' ? 'alert-info' : 'alert-error'
                         }`}>
                         {message.text}
                     </div>
@@ -83,14 +83,14 @@ function PagosCuotas() {
 
                 <div className="form-group">
                     <label className="form-label" htmlFor="idClientePagos">
-                        ID del Cliente
+                        ID del Prestamo-Cliente
                     </label>
                     <input
                         id="idClientePagos"
                         type="number"
                         value={idCliente}
                         onChange={(e) => setIdCliente(e.target.value)}
-                        placeholder="Ingresa el ID del cliente"
+                        placeholder="Ingresa el ID del Prestamo-Cliente"
                         className="form-input"
                         disabled={loading}
                     />
